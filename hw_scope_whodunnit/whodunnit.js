@@ -106,24 +106,98 @@
 // #### Episode 6
 //
 // ```js
-let murderer = 'Colonel Mustard';
-
-const changeMurderer = function() {
-  murderer = 'Mr. Green';
-
-  const plotTwist = function() {
-    murderer = 'Mrs. White';
-  }
-
-  plotTwist();
-}
-
-const declareMurderer = function () {
-  return `The murderer is ${murderer}.`;
-}
-
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
+// let murderer = 'Colonel Mustard';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
+//
+//   const plotTwist = function() {
+//     murderer = 'Mrs. White';
+//   }
+//
+//   plotTwist();
+// }
+//
+// const declareMurderer = function () {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
 // ```
 // The output will be "The Murderer is Mrs White" because the variable murderer declared within the changeMurderer function isn't preceeded with the let keyword making it accessable to declareMurderer.
+
+
+// #### Episode 7
+//
+// ```js
+// let murderer = 'Professor Plum';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
+//
+//   const plotTwist = function() {
+//     let murderer = 'Colonel Mustard';
+//
+//     const unexpectedOutcome = function() {
+//       murderer = 'Miss Scarlet';
+//     }
+//
+//     unexpectedOutcome();
+//   }
+//
+//   plotTwist();
+// }
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
+// ```
+//  REVISIT!!!!!!
+
+
+// #### Episode 8
+//
+// ```js
+// const scenario = {
+//   murderer: 'Mrs. Peacock',
+//   room: 'Conservatory',
+//   weapon: 'Lead Pipe'
+// };
+//
+// const changeScenario = function() {
+//   scenario.murderer = 'Mrs. Peacock';
+//   scenario.room = 'Dining Room';
+//
+//   const plotTwist = function(room) {
+//     if (scenario.room === room) {
+//       scenario.murderer = 'Colonel Mustard';
+//     }
+//
+//     const unexpectedOutcome = function(murderer) {
+//       if (scenario.murderer === murderer) {
+//         scenario.weapon = 'Candle Stick';
+//       }
+//     }
+//
+//     unexpectedOutcome('Colonel Mustard');
+//   }
+//
+//   plotTwist('Dining Room');
+// }
+//
+// const declareWeapon = function() {
+//   return `The weapon is ${scenario.weapon}.`
+// }
+//
+// changeScenario();
+// const verdict = declareWeapon();
+// console.log(verdict);
+// ```
+// When changeScenario is called, it keeps the value of murderer set to Mrs Peacock and redefines the value of room to dining room. It then calls plotTwist passing in dining room as it's argument and confirms that it is equal to the value of scenario.room then redifines the value of murderer to colonel Mustard.  It then calls unexpectedOutcome passing in Colonel Mustard as its argument which redifines the value of weapon to Candle stick.
+// The output is therefore The weapon is Candle Stick
