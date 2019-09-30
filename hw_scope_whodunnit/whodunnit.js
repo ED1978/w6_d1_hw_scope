@@ -82,22 +82,48 @@
 // #### Episode 5
 //
 // ```js
-const scenario = {
-  murderer: 'Miss Scarlet',
-  room: 'Kitchen',
-  weapon: 'Candle Stick'
-};
-
-const changeWeapon = function(newWeapon) {
-  scenario.weapon = newWeapon;
-}
-
-const declareWeapon = function() {
-  return `The weapon is the ${scenario.weapon}.`;
-}
-
-changeWeapon('Revolver');
-const verdict = declareWeapon();
-console.log(verdict);
+// const scenario = {
+//   murderer: 'Miss Scarlet',
+//   room: 'Kitchen',
+//   weapon: 'Candle Stick'
+// };
+//
+// const changeWeapon = function(newWeapon) {
+//   scenario.weapon = newWeapon;
+// }
+//
+// const declareWeapon = function() {
+//   return `The weapon is the ${scenario.weapon}.`;
+// }
+//
+// changeWeapon('Revolver');
+// const verdict = declareWeapon();
+// console.log(verdict);
 // ```
 // The output will be "The weapon is the Revolver" because although the object scenario is delcared as a constant, it's attribute remain muttable.  Therefore chngeWeapon is able to update the value of scenario.weapon
+
+
+// #### Episode 6
+//
+// ```js
+let murderer = 'Colonel Mustard';
+
+const changeMurderer = function() {
+  murderer = 'Mr. Green';
+
+  const plotTwist = function() {
+    murderer = 'Mrs. White';
+  }
+
+  plotTwist();
+}
+
+const declareMurderer = function () {
+  return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
+// ```
+// The output will be "The Murderer is Mrs White" because the variable murderer declared within the changeMurderer function isn't preceeded with the let keyword making it accessable to declareMurderer.
