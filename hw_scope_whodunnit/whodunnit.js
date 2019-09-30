@@ -158,7 +158,7 @@
 // const verdict = declareMurderer();
 // console.log(verdict);
 // ```
-//  REVISIT!!!!!!
+
 
 
 // #### Episode 8
@@ -201,3 +201,22 @@
 // ```
 // When changeScenario is called, it keeps the value of murderer set to Mrs Peacock and redefines the value of room to dining room. It then calls plotTwist passing in dining room as it's argument and confirms that it is equal to the value of scenario.room then redifines the value of murderer to colonel Mustard.  It then calls unexpectedOutcome passing in Colonel Mustard as its argument which redifines the value of weapon to Candle stick.
 // The output is therefore The weapon is Candle Stick
+
+
+// #### Episode 9
+//
+// ```js
+let murderer = 'Professor Plum';
+
+if (murderer === 'Professor Plum') {
+  let murderer = 'Mrs. Peacock';
+}
+
+const declareMurderer = function() {
+  return `The murderer is ${murderer}.`;
+}
+
+const verdict = declareMurderer();
+console.log(verdict);
+// ```
+// The output is "The murderer is Professor Plum" because let murderer = 'Mrs Peacock' is declared within the block of the if statement and therefore not available outside it.
