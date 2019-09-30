@@ -132,32 +132,37 @@
 // #### Episode 7
 //
 // ```js
-// let murderer = 'Professor Plum';
-//
-// const changeMurderer = function() {
-//   murderer = 'Mr. Green';
-//
-//   const plotTwist = function() {
-//     let murderer = 'Colonel Mustard';
-//
-//     const unexpectedOutcome = function() {
-//       murderer = 'Miss Scarlet';
-//     }
-//
-//     unexpectedOutcome();
-//   }
-//
-//   plotTwist();
-// }
-//
-// const declareMurderer = function() {
-//   return `The murderer is ${murderer}.`;
-// }
-//
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
+let murderer = 'Professor Plum';
+
+const changeMurderer = function() {
+  murderer = 'Mr. Green';
+
+  const plotTwist = function() {
+    let murderer = 'Colonel Mustard';
+
+    const unexpectedOutcome = function() {
+      murderer = 'Miss Scarlet';
+    }
+
+    unexpectedOutcome();
+    console.log(murderer)
+
+  }
+
+  plotTwist();
+  console.log(murderer)
+
+}
+
+const declareMurderer = function() {
+  return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
 // ```
+// The output is The murderer is Mr Green because only the highest level murderer variable (Mr Green) is available to functions outside of the changeMurderer function
 
 
 
@@ -206,17 +211,17 @@
 // #### Episode 9
 //
 // ```js
-let murderer = 'Professor Plum';
-
-if (murderer === 'Professor Plum') {
-  let murderer = 'Mrs. Peacock';
-}
-
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
-
-const verdict = declareMurderer();
-console.log(verdict);
+// let murderer = 'Professor Plum';
+//
+// if (murderer === 'Professor Plum') {
+//   let murderer = 'Mrs. Peacock';
+// }
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// const verdict = declareMurderer();
+// console.log(verdict);
 // ```
 // The output is "The murderer is Professor Plum" because let murderer = 'Mrs Peacock' is declared within the block of the if statement and therefore not available outside it.
