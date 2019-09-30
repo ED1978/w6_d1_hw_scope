@@ -61,19 +61,43 @@
 // #### Episode 4
 //
 // ```js
-let suspectOne = 'Miss Scarlet';
-let suspectTwo = 'Professor Plum';
-let suspectThree = 'Mrs. Peacock';
-
-const declareAllSuspects = function() {
-  let suspectThree = 'Colonel Mustard';
-  return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
-}
-
-const suspects = declareAllSuspects();
-console.log(suspects);
-console.log(`Suspect three is ${suspectThree}.`);
+// let suspectOne = 'Miss Scarlet';
+// let suspectTwo = 'Professor Plum';
+// let suspectThree = 'Mrs. Peacock';
+//
+// const declareAllSuspects = function() {
+//   let suspectThree = 'Colonel Mustard';
+//   return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
+// }
+//
+// const suspects = declareAllSuspects();
+// console.log(suspects);
+// console.log(`Suspect three is ${suspectThree}.`);
 // ```
 // Output 1 will be "The suspects are Miss Scarlet, Professor Plum Colonel Mustard."  This is because declareAllSuspects accesses thr locally defined suspectThree and the globally defined supects One and Two.
 
 // The second output will be "Suspect three is Mrs Peacock" because the console.log is acessing the globally defined variable suspectThree.
+
+
+// #### Episode 5
+//
+// ```js
+const scenario = {
+  murderer: 'Miss Scarlet',
+  room: 'Kitchen',
+  weapon: 'Candle Stick'
+};
+
+const changeWeapon = function(newWeapon) {
+  scenario.weapon = newWeapon;
+}
+
+const declareWeapon = function() {
+  return `The weapon is the ${scenario.weapon}.`;
+}
+
+changeWeapon('Revolver');
+const verdict = declareWeapon();
+console.log(verdict);
+// ```
+// The output will be "The weapon is the Revolver" because although the object scenario is delcared as a constant, it's attribute remain muttable.  Therefore chngeWeapon is able to update the value of scenario.weapon
